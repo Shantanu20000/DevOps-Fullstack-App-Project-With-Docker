@@ -133,6 +133,16 @@ Go to Backend
 ```shell
 cd DevOps-Fullstack-App-Project-With-Docker/backend/
 ```
+Mention your informationn in Dockerfile of backend
+```
+# Set environment variables for non-interactive apt installs
+ENV DB_HOST="DB_host_ip_or_DNS" # 172.127.182.2
+ENV DB_USER="User_Name" # test
+ENV DB_PASSWORD="User_Password" # 1234 
+ENV DB_NAME="Database_Name" # employees
+ENV DB_PORT="5432" # rds Port no.
+ENV ALLOWED_ORIGINS="http://Frontend_Pub_ip:3000"   # 172.127.182.2
+```
 Build and Run Docker image of Backend
 ```
 docker build -t my-backend .
@@ -143,7 +153,7 @@ Go to Backend
 cd DevOps-Fullstack-App-Project-With-Docker/backend/
 ```
 Mention Backend Public Ip In .env file 
-```
+``` 
 sudo vim .env # REACT_APP_SERVER_URL=http://localhost:8080/employees --> REACT_APP_SERVER_URL=http://backend_pub_ip:8080/employees
 ```
 Build and Run Docker image of Frontend
