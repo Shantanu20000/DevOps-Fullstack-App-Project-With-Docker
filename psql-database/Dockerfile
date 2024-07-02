@@ -10,10 +10,10 @@ ENV POSTGRES_PASSWORD=1234
 COPY init-db.sql /docker-entrypoint-initdb.d/
 
 # Copy custom PostgreSQL configuration file
-COPY postgresql.conf /etc/postgresql/postgresql.conf
+COPY postgresql.conf /var/lib/postgresql/data/postgresql.conf
 
 # Expose the PostgreSQL port
 EXPOSE 5432
 
 # Ensure PostgreSQL uses the custom configuration
-CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+CMD ["postgres", "-c", "config_file=/var/lib/postgresql/data/postgresql.conf"]
