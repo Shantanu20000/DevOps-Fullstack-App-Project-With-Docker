@@ -133,7 +133,7 @@ Go to Backend
 ```shell
 cd DevOps-Fullstack-App-Project-With-Docker/backend/
 ```
-Mention your informationn in Dockerfile of backend
+Mention your informationn in .env file of Backend
 ```
 # Set environment variables for non-interactive apt installs
 ENV DB_HOST="DB_host_ip_or_DNS" # 172.127.182.2
