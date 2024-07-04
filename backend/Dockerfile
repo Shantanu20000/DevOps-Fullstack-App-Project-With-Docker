@@ -1,6 +1,14 @@
 # Use Ubuntu 20.04 as the base image
 FROM ubuntu:latest
 
+# Set environment variables for non-interactive apt installs
+ENV DB_HOST="DB_host_ip_or_DNS" 
+ENV DB_USER="User_Name" 
+ENV DB_PASSWORD="User_Password" 
+ENV DB_NAME="Database_Name" 
+ENV DB_PORT="5432" 
+ENV ALLOWED_ORIGINS="http://Frontend_Pub_ip:3000"
+
 # Set Go environment variables
 ENV GOPATH=/go
 ENV GOROOT=/usr/local/go
