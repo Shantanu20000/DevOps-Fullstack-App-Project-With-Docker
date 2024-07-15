@@ -1,6 +1,14 @@
 # Use Ubuntu 20.04 as the base image
 FROM ubuntu:latest
 
+# Set environment variables for non-interactive apt installs
+ENV DB_HOST="aa4e56e04f37142d9904c2b1a78ecde2-488863630.ap-south-1.elb.amazonaws.com" 
+ENV DB_USER="test" 
+ENV DB_PASSWORD="1234" 
+ENV DB_NAME="employees" 
+ENV DB_PORT="5432" 
+ENV ALLOWED_ORIGINS="http://a92c35eee02634c09a81847ce1ff7d69-437757805.ap-south-1.elb.amazonaws.com:3000"
+
 # Set Go environment variables
 ENV GOPATH=/go
 ENV GOROOT=/usr/local/go
@@ -23,7 +31,6 @@ WORKDIR /home/ubuntu/project
 
 # Copy the Go application code to the container
 COPY . .
-COPY .env ./
 
 # Expose port 8080 to the outside world
 EXPOSE 8080
